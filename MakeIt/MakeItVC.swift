@@ -11,7 +11,7 @@ import UIKit
 class MakeItVC: UITableViewController {
 
         
-    let itemArray = ["Maket", "Bubu", "Nanana"]
+    var itemArray : [String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -40,5 +40,25 @@ class MakeItVC: UITableViewController {
         
         
     }
+    
+    //MARK - Add New Items
+    
+    @IBAction func addButtonPressed(_ sender: Any) {
+        var textFieldText = UITextField()
+        let alert = UIAlertController(title: "Add New MakeIt Item", message: "", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Add Item", style: .default) {
+            (action) in
+            self.itemArray.append(textFieldText.text!)
+            self.tableView.reloadData()
+        }
+        alert.addTextField {
+            (alertTextField) in
+            alertTextField.placeholder = "Create new Item"
+            textFieldText = alertTextField
+        }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
 }
 

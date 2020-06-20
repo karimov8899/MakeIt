@@ -30,7 +30,14 @@
                             <outlet property="delegate" destination="R9k-4o-bht" id="bZC-fI-77g"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="MakeIt" id="fFl-nd-2x9"/>
+                    <navigationItem key="navigationItem" title="MakeIt" id="fFl-nd-2x9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yxG-4l-8w7">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="R9k-4o-bht" id="h3t-bD-XL8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggj-pV-fIe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
